@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # мы указали, чтобы стартовой страницей в корневой директории выводился через контролер posts и экшен который будет вызываться по умолчанию: index
+  root 'posts#index'
+  # команда создает за нас несколько маршрутов для нашего контролера
+  resources :posts
 end

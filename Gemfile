@@ -67,4 +67,8 @@ gem "popper_js", "~> 1.16"
 gem "carrierwave", "~> 2.1"
 
 # Use ActiveStorage variant
-gem "mini_magick", "~> 4.10"
+gem "mini_magick", "~> 4.10" # предустановить прогу на убунту командой: sudo apt-get install imagemagick
+
+gem "trix", "~> 0.10.1"
+
+gem 'trix-gem'

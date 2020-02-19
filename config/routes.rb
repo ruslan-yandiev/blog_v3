@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'posts#index'
   # команда создает за нас несколько маршрутов для нашего контролера
   resources :posts
+  # создаем маршруты для контролера, но так как у нас только два метода(экшена) создадим только для них маршруты
+  resources :pictures, only: [:create, :destroy]
 end

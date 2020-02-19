@@ -42,7 +42,18 @@
         </div>
       </div>
 
-      <%= yield %>
+      <div class="row">
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <!-- используем созданный нами хелпер tag_cloud -->
+        <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </div>
     </div>
   </body>
 </html>

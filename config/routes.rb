@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :posts
   # создаем маршруты для контролера, но так как у нас только два метода(экшена) создадим только для них маршруты
   resources :pictures, only: [:create, :destroy]
+  # создадим маршрут для контроллера tags для вывода тегов для экшена show 
+  resources :tags, only: [:show]
 end

@@ -45,6 +45,6 @@ class PostsController < ApplicationController
   # приватный метод передающийся в аргументом в другой метод для фильтрации вводимых данных на уровне контроллера
   def post_params
     # означает, что в параметрах должен присутствовать только пост которому разрешаем только следующие поля totle, summary, body
-    params.require(:post).permit(:title, :summary, :body, :image)
+    params.require(:post).permit(:title, :summary, :body, :image, :all_tags)
   end
 end

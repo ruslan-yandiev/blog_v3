@@ -1,0 +1,6 @@
+<% if category.present? && category.parent %>
+  <ol class="breadcrumb">
+  	<!-- используем созданный хелпер -->
+    <%= build_breadcrumb(category) %>
+  </ol>
+<% end %>

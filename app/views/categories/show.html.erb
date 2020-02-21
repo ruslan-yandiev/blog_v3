@@ -1,0 +1,10 @@
+<%= render 'shared/breadcrumb', category: @category %>
+
+<h1><%= @category.name %></h1>
+
+<section id='posts'>
+	<%= render @posts %>
+</section>
+
+<!-- render page links in the view: также дополнительно подключим класс из initialis/bootstrap_pagination_helper.rb -->
+<%= will_paginate @posts, renderer: 'BootstrapPaginationHelper::LinkRenderer' %>

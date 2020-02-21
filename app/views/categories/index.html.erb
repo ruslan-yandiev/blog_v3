@@ -19,7 +19,7 @@
         <tr>
           <td><%= index %></td>
           <td><%= category.name %></td>
-          <td><%= category.name if category.present? %></td>
+          <td><%= category.parent.name if category.parent.present? %></td>
           <td>
             <%= link_to 'Изменить', edit_category_path(category), class: 'btn btn-outline-primary btn-sm' %>
             <%= link_to 'Удалить', category_path(category), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-outline-danger btn-sm' %>

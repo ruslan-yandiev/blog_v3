@@ -1,4 +1,10 @@
 <h1><%= t('.title') %></h1>
 
 <!-- # будет использовать код итирации из _post.html.erb удобство в том, что нам не нужно там указывать цикл -->
-<%= render @posts %>
+<!-- обернем вывод наших статей в дополнительную секцию -->
+<section id ='posts'>
+	<%= render @posts %>
+</section>
+
+<!-- render page links in the view: также дополнительно подключим класс из initialis/bootstrap_pagination_helper.rb -->
+<%= will_paginate @posts, renderer: 'BootstrapPaginationHelper::LinkRenderer' %>

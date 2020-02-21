@@ -14,6 +14,10 @@
       <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
+            <!-- используем созданный нами хелпер tag_cloud -->
+            <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
+              <%= link_to tag.name, tag_path(tag.name), class: 'badge badge-primary' %>
+            <% end %>
         </button>
 
         <a class="navbar-brand" href="#"><%= link_to 'Новая статья', new_post_path, class: 'btn btn-outline-primary pull-xs-right' %></a>
@@ -46,13 +50,6 @@
         <div class="col-md-9">
           <%= yield %>
         </div>
-      </div>
-
-      <div class="col-md-3">
-        <!-- используем созданный нами хелпер tag_cloud -->
-        <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
-          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-        <% end %>
       </div>
     </div>
   </body>

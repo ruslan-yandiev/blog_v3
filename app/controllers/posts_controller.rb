@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = Post.all
+    # с помощью gem "will_paginate", укажем сколько постов отображать на странице
+    @posts = Post.paginate(page: params[:page], per_page: 5)
   end
 
   def new

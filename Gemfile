@@ -72,3 +72,5 @@ gem "mini_magick", "~> 4.10" # предустановить прогу на уб
 gem "trix", "~> 0.10.1"
 
 gem 'trix-gem'
+
+gem "will_paginate", "~> 3.2"

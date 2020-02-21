@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   #добавили возможность загружать изображение
   mount_uploader :image, ImageUploader
 
+  belongs_to :category
+
   # создаем связи между моделями многие ко многим (связи в бд) через третью таблицу в БД taggings
   has_many :taggings
   has_many :tags, through: :taggings

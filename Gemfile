@@ -74,3 +74,5 @@ gem "trix", "~> 0.10.1"
 gem 'trix-gem'
 
 gem "will_paginate", "~> 3.2"
+# помогает строить дерево объектов
+gem "ancestry", "~> 3.0"

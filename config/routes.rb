@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :pictures, only: [:create, :destroy]
   # создадим маршрут для контроллера tags для вывода тегов для экшена show 
   resources :tags, only: [:show]
+
+  resources :categories
 end

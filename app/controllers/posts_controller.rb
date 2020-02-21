@@ -18,7 +18,8 @@ class PostsController < ApplicationController
     if @post.save # если сохранение валидно, успешно то
       redirect_to @post, success: 'Статья успешно создана' # направляем на отображение объекта
     else # во всех остальных случаях
-      render :new, danger: 'Статья не создана' # направить и отобразить форму new
+      flash.now[:danger] = 'Статья не создана'
+      render :new # направить и отобразить форму new
     end
   end
 
@@ -28,7 +29,8 @@ class PostsController < ApplicationController
     if @post.update_attributes(post_params)
       redirect_to @post, success: 'Статья успешно обновлена'
     else
-      render :edit, danger: 'Статья не обновлена'
+      flash.now[:danger] = 'Статья не обновлена'
+      render :edit
     end
   end
 
@@ -46,6 +48,6 @@ class PostsController < ApplicationController
   # приватный метод передающийся в аргументом в другой метод для фильтрации вводимых данных на уровне контроллера
   def post_params
     # означает, что в параметрах должен присутствовать только пост которому разрешаем только следующие поля totle, summary, body
-    params.require(:post).permit(:title, :summary, :body, :image, :all_tags)
+    params.require(:post).permit(:title, :summary, :body, :image, :all_tags, :category_id)
   end
 end

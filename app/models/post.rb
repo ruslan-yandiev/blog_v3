@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   belongs_to :category
 
   # создаем связи между моделями многие ко многим (связи в бд) через третью таблицу в БД taggings
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
   validates :title, :summary, :body, presence: true

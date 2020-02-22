@@ -65,16 +65,20 @@ gem "jquery-rails", "~> 4.3"
 gem "bootstrap", "~> 4.4"
 
 gem "popper_js", "~> 1.16"
-
+# Этот гем обеспечивает простой и чрезвычайно гибкий способ загрузки файлов из приложений Ruby. Он хорошо работает с веб-приложениями на основе Rack, такими как Ruby on Rails.
 gem "carrierwave", "~> 2.1"
 
-# Use ActiveStorage variant
+# Use ActiveStorage variant. Рубиновая оболочка для командной строки ImageMagick или GraphicsMagick .
 gem "mini_magick", "~> 4.10" # предустановить прогу на убунту командой: sudo apt-get install imagemagick
-
+# Trix - это WYSIWYG-редактор для написания сообщений, комментариев, статей и списков - простых документов, из которых состоит большинство веб-приложений.
 gem "trix", "~> 0.10.1"
-
+# гем нужен для нормальной работы гема trix
 gem 'trix-gem'
-
+# will_paginate - это библиотека разбивки на страницы, которая интегрируется с Ruby on Rails, Sinatra, Hanami :: View, Merb, DataMapper и Sequel.
 gem "will_paginate", "~> 3.2"
 # помогает строить дерево объектов
 gem "ancestry", "~> 3.0"
+# мощный гем позволяющий делать аутоинтификацию с огромным функционалом https://github.com/heartcombo/devise
+gem "devise", "~> 4.7" # локализация https://github.com/heartcombo/devise/wiki/I18n
+
+gem "devise-i18n", "~> 1.9" # настройки для локализации https://github.com/heartcombo/devise/wiki/I18n

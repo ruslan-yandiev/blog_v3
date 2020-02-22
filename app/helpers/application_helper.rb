@@ -9,4 +9,25 @@ module ApplicationHelper
     result << content_tag(:li, category.name, class: "breadcrumb-item active")
     result.join('').html_safe
   end
+
+  # метод написан в функциональном (процедурном) стиле, а не императивном.
+  def bootstrap_class_for(name)
+  	# метод написан в функциональном (процедурном) стиле, а не императивном.
+    { success:"alert-success",
+      error:  "alert-danger",
+      danger: "alert-danger",
+      alert:  "alert-warning",
+      notice: "alert-info"
+    }[name.to_sym] || name
+
+    # # а это в императивном стиле
+    # hh_name = { 
+    #   success:"alert-success",
+    #   error:  "alert-danger",
+    #   danger: "alert-danger",
+    #   alert:  "alert-warning",
+    #   notice: "alert-info"
+    # }
+    # hh_name[name.to_sym]
+  end
 end

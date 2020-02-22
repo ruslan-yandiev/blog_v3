@@ -1,5 +1,8 @@
 class PicturesController < ApplicationController
   def create
+    # закроем для всех незарегестрированых пользователей (ограничения на все экшены)
+    before_action :authenticate_user! # метод класса добавляющий специальный метод экземпляра (возможно приватный) имеющийся в геме devise который умолчанию вызывается во всех экшенах 
+
   	# сохранит нашу картинку перенесенную в редактор
   	@picture = Picture.new(image_params)
   	@picture.save

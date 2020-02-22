@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  # закроем для всех незарегестрированых пользователей (ограничения на все экшены) кроме show
+  before_action :authenticate_user!, except: %i[show] # метод класса добавляющий специальный метод экземпляра (возможно приватный) имеющийся в геме devise который умолчанию вызывается во всех экшенах 
+
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index

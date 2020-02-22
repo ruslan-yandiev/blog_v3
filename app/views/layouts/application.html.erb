@@ -21,7 +21,23 @@
             <% end %>
         </button>
 
-        <!-- <a class="navbar-brand" href="#"><%#<%= link_to 'Новая статья', new_post_path, class: 'btn btn-outline-primary pull-xs-right' %></a> -->
+        <a class="navbar-brand" href="#"><%= link_to 'Новая статья', new_post_path, class: 'btn btn-outline-primary pull-xs-right' %></a>
+
+        <ul class="nav">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <!-- это просто разные способы создания ссылок: -->
+              <%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Вход", new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= new_user_registration_path %>">Регистрация<span class="sr-only">(current)</span></a>
+            </li>
+          <% end %>
+        </ul>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="nav navbar-nav">
@@ -30,22 +46,6 @@
             </li>
             <% Category.order(:name).roots.each do |category| %>
               <li class="nav-item <%= 'active' if current_page?(category_path(category)) %>"><%= link_to category.name, category, class: 'nav-link' %></li>
-            <% end %>
-          </ul>
-
-          <ul class="nav navbar-nav">
-            <% if user_signed_in? %>
-              <li class="nav-item">
-                <!-- это просто разные способы создания ссылок: -->
-                <%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link" %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "Вход", new_user_session_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<%= new_user_registration_path %>">Регистрация<span class="sr-only">(current)</span></a>
-              </li>
             <% end %>
           </ul>
         </div>

@@ -1,6 +1,6 @@
-class Admin::CategoriesController < ApplicationController
-  # закроем для всех незарегестрированых пользователей (ограничения на все экшены) кроме show
-  before_action :authenticate_user!, except: %i[show] # метод класса добавляющий специальный метод экземпляра (возможно приватный) имеющийся в геме devise который умолчанию вызывается во всех экшенах 
+class Admin::CategoriesController < Admin::AdminController
+  # закроем для всех незарегестрированых пользователей (ограничения на все экшены)
+  before_action :authenticate_user! # метод класса добавляющий специальный метод экземпляра (возможно приватный) имеющийся в геме devise который умолчанию вызывается во всех экшенах 
 
   before_action :set_category, only: [:edit, :update, :destroy]
 

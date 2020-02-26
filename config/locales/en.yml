@@ -30,4 +30,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  common:
+    errors: 'You have errors'
+    back: 'Back'
+    create: 'Create'
+    edit: 'Edit'
+  will_paginate:
+    previous_label: '&larr;'
+    next_label: '&rarr;'
+  posts:
+    index:
+      title: 'Posts'
+  admin:
+    posts:
+      new:
+        title: 'New post'
+      edit:
+        title: 'Edit post'
+      form:
+        submit:
+          '%{action} post'
+    categories:
+      index:
+        title: 'Categories'
+      new:
+        title: 'New category'
+      edit:
+        title: 'Edit category'
+      form:
+        submit:
+          '%{action} category'
